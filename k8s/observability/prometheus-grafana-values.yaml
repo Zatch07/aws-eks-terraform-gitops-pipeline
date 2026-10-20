@@ -1,0 +1,22 @@
+# Helm values for kube-prometheus-stack
+grafana:
+  adminPassword: "AdminSecurePassword123!"
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: false # Port-forward used by default for security
+
+prometheus:
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+    retention: 7d
+    resources:
+      requests:
+        cpu: 200m
+        memory: 512Mi
+      limits:
+        cpu: 500m
+        memory: 1024Mi
+
+alertmanager:
+  enabled: true
