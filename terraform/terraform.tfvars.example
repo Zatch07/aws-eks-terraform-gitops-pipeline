@@ -1,0 +1,3 @@
+aws_region          = "ap-south-1"
+cluster_name        = "production-eks-cluster"
+ecr_repository_name = "cloud-native-api"
